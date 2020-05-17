@@ -1,55 +1,79 @@
+var mer = document.querySelector('#Mercurius');
+var ven = document.querySelector('#Venus');
+var aard = document.querySelector('#Aarde');
+var mars = document.querySelector('#Mars');
+var jup = document.querySelector('#Jupiter');
+var sat = document.querySelector('#Saturnus');
+var ura = document.querySelector('#Uranus');
+var nep = document.querySelector('#Neptunes');
+var plu = document.querySelector('#Pluto');
 
-var rotationSpeed = 0.001;
-var myOtherBox = document.getElementById('myOtherBox');
+function spin(planet){
+console.log(planet.object3D.position.x);
+// for (var i = 0; planet.object3D.position.x > 0; i++) {
+//   // planet.object3D.position.x -= i;
+// }
 
-function spin(){
-	myOtherBox.object3D.rotation.x += rotationSpeed;
-	myOtherBox.object3D.rotation.y += rotationSpeed;
-	myOtherBox.object3D.rotation.z += rotationSpeed/2;
+if (planet.object3D.position.x > 0 && planet.object3D.position.z >= -50){
+planet.object3D.position.x -= 1;
+planet.object3D.position.z += 1;
+}  else if (planet.object3D.position.x <= 0 && planet.object3D.position.z >= -50) {
+  planet.object3D.position.x -= 1;
+  planet.object3D.position.z -= 1;
+} else if (planet.object3D.position.x <= 0 && planet.object3D.position.z <= -50){
+  planet.object3D.position.x += 1;
+  planet.object3D.position.z -= 1;
+} else if (planet.object3D.position.x >= 0 && planet.object3D.position.z <= -50){
+  planet.object3D.position.x += 1;
+  planet.object3D.position.z += 1;
+}
+
+
+
+// myOtherBox.object3D.rotation.x += rotationSpeed;
+// myOtherBox.object3D.rotation.y += rotationSpeed;
+// myOtherBox.object3D.rotation.z += rotationSpeed/2;
 	//console.log(myOtherBox.object3D.rotation);
 }
-setInterval(spin, 10);
+setInterval(function(){
+  spin(mer);
+}, 100);
+
+setInterval(function(){
+  spin(ven);
+}, 100);
 
 
-myOtherBox.addEventListener('mouseenter', function(){
-	rotationSpeed = 0.1;
-	console.log('entered');
-});
-
-myOtherBox.addEventListener('mouseleave', function(){
-	rotationSpeed = 0.001;
-	console.log('left');
-});
+setInterval(function(){
+  spin(aard);
+}, 100);
 
 
+setInterval(function(){
+  spin(mars);
+}, 100);
 
 
-/*
- * click-events can use a fuse (default on mobile). So the event only fires, if the cursor is on the object for a specified time.
- */
+setInterval(function(){
+  spin(jup);
+}, 100);
 
-var growspeed = 1.2;
-var up = 1;
 
-function grow(){
-	myOtherBox.object3D.scale.x *= growspeed;
-	myOtherBox.object3D.scale.y *= growspeed;
-	myOtherBox.object3D.scale.z *= growspeed;
-	//console.log(myOtherBox.object3D.scale);
-}
+setInterval(function(){
+  spin(sat);
+}, 100);
 
-function fly(){
-	myBox.object3D.position.y += up;
-}
 
-myOtherBox.addEventListener('click', function(){ // uses a fuse
-	grow();
-	console.log('grew');
-});
+setInterval(function(){
+  spin(ura);
+}, 100);
 
-var myBox = document.getElementById('myBox');
 
-myBox.addEventListener('click', function(){ // uses a fuse
-	fly();
-	console.log('fly');
-});
+setInterval(function(){
+  spin(nep);
+}, 100);
+
+
+setInterval(function(){
+  spin(plu);
+}, 100);
