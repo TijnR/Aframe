@@ -15,17 +15,17 @@ console.log(planet.object3D.position.x);
 // }
 
 if (planet.object3D.position.x > 0 && planet.object3D.position.z >= -50){
-planet.object3D.position.x -= 1;
-planet.object3D.position.z += 1;
+planet.object3D.position.x -= 0.01;
+planet.object3D.position.z += 0.01;
 }  else if (planet.object3D.position.x <= 0 && planet.object3D.position.z >= -50) {
-  planet.object3D.position.x -= 1;
-  planet.object3D.position.z -= 1;
+  planet.object3D.position.x -= 0.01;
+  planet.object3D.position.z -= 0.01;
 } else if (planet.object3D.position.x <= 0 && planet.object3D.position.z <= -50){
-  planet.object3D.position.x += 1;
-  planet.object3D.position.z -= 1;
+  planet.object3D.position.x += 0.01;
+  planet.object3D.position.z -= 0.01;
 } else if (planet.object3D.position.x >= 0 && planet.object3D.position.z <= -50){
-  planet.object3D.position.x += 1;
-  planet.object3D.position.z += 1;
+  planet.object3D.position.x += 0.01;
+  planet.object3D.position.z += 0.01;
 }
 
 
@@ -37,43 +37,43 @@ planet.object3D.position.z += 1;
 }
 setInterval(function(){
   spin(mer);
-}, 100);
+}, 10);
 
 setInterval(function(){
   spin(ven);
-}, 100);
+}, 10);
 
 
 setInterval(function(){
   spin(aard);
-}, 100);
+}, 10);
 
 
 setInterval(function(){
   spin(mars);
-}, 100);
+}, 10);
 
 
 setInterval(function(){
   spin(jup);
-}, 100);
+}, 10);
 
 
 setInterval(function(){
   spin(sat);
-}, 100);
+}, 10);
 
 
 setInterval(function(){
   spin(ura);
-}, 100);
+}, 10);
 
 
 setInterval(function(){
   spin(nep);
-}, 100);
+}, 10);
 
 
 setInterval(function(){
   spin(plu);
-}, 100);
+}, 10);
