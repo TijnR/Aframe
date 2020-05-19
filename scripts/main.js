@@ -8,8 +8,12 @@ var ura = document.querySelector('#Uranus');
 var nep = document.querySelector('#Neptunes');
 var plu = document.querySelector('#Pluto');
 
+var sun = document.querySelector('#zon');
+
+const rotationSpeed = 0.00005;
+
 function spin(planet){
-console.log(planet.object3D.position.x);
+// console.log(planet.object3D.position.x);
 // for (var i = 0; planet.object3D.position.x > 0; i++) {
 //   // planet.object3D.position.x -= i;
 // }
@@ -30,11 +34,25 @@ planet.object3D.position.z += 0.01;
 
 
 
+
+
+
+
 // myOtherBox.object3D.rotation.x += rotationSpeed;
 // myOtherBox.object3D.rotation.y += rotationSpeed;
 // myOtherBox.object3D.rotation.z += rotationSpeed/2;
 	//console.log(myOtherBox.object3D.rotation);
 }
+
+function rotate(planet){
+  planet.object3D.rotation.y += rotationSpeed;
+  console.log(planet.object3D.rotation.y);
+}
+
+setInterval(function(){
+  rotate(sun);
+
+}, 10);
 setInterval(function(){
   spin(mer);
 }, 10);

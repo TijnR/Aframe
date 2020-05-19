@@ -20,72 +20,83 @@
         <img id="ura" src="images/ura.jpg" />
         <img id="nep" src="images/nep.jpg" />
         <img id="plu" src="images/pluto.jpg" />
+        <img id="ring"src="images/ring.jpg" alt="">
       </a-assets>
 
-      <a-camera>
-        <a-entity camera look-controls position="0 1.6 0"></a-entity>
-        <a-entity camera look-controls wasd-controls="acceleration:100" position="0 50 0"></a-entity>
 
+      <a-entity camera look-controls wasd-controls="acceleration:650"
+      position="0 1.8 0">
 
-      </a-camera>
+      </a-entity>
+      <a-entity light="type:directional; castShadow:true;" radius="28"position="20 1 0"></a-entity>
+      <a-entity light="type:directional; castShadow:true;" radius="28"position="-1 1 -60"></a-entity>
+        <a-entity light="type:directional; castShadow:true;" radius="28"position="-1 1 10"></a-entity>
+        <a-entity light="type:directional; castShadow:true;" radius="28"position="-20 1 0"></a-entity>
 
 
         <a-sky src="images/space.jpg" id="image-360" radius="500" ></a-sky>
       <a-sphere id="zon"
       color="yellow"
       radius="28"
+      rotate="0 0 0"
       src= '#sun'
+      sun-position="-1 1 -50"
       position="-1 1 -50"></a-sphere>
 
       <a-sphere id="Mercurius"
 
       radius="0.1"
       src= '#merc'
-      position="40 1 -50"></a-sphere>
+      position="0 1 -10"></a-sphere>
 
 
       <a-sphere id="Venus"
       color="yellow"
       radius="0.24"
       src= '#ven'
-      position="60 1 -50"></a-sphere>
+      position="30 1 -20"></a-sphere>
 
       <a-sphere id="Aarde"
 
       radius="0.25"
       src= '#aard'
-      position="80 1 -50"></a-sphere>
+      position="-50 1 -80"></a-sphere>
 
       <a-sphere id="Mars"
 
       radius="0.14"
       src= '#mar'
-      position="100 1 -50"></a-sphere>
+      position="50 1 -0"></a-sphere>
 
       <a-sphere id="Jupiter"
       src= '#jup'
       radius="2.76"
-      position="120 1 -50"></a-sphere>
+      position="-10 1 -160"></a-sphere>
 
       <a-sphere id="Saturnus"
       src="#sat"
+
       radius="2.33"
-      position="140 1 -50"></a-sphere>
+      position="110 1 -30">
+
+        <a-ring src="#ring" radius-inner="3" radius-outer="5" opacity="0.8"repeat="2"rotation="110 0 0"></a-ring>
+        <a-ring src="#ring" radius-inner="3" radius-outer="5" opacity="0.8"repeat="2"rotation="-70 0 180"></a-ring>
+      </a-sphere>
 
       <a-sphere id="Uranus"
       src="#ura"
       radius="1.01"
-      position="160 1 -50"></a-sphere>
+      position="0 1 -210"></a-sphere>
 
       <a-sphere id="Neptunes"
       src="#nep"
       radius="0.98"
-      position="180 1 -50"></a-sphere>
+      position="-100 1 -130"></a-sphere>
 
       <a-sphere id="Pluto"
       src:"#plu"
       radius="0.05"
-      position="200 1 -50"></a-sphere>
+      position="140 1 -110"></a-sphere>
 
     </a-scene>
   </body>
